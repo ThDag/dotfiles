@@ -1,5 +1,10 @@
 return {
   {
+    -- disable yanky
+    { "gbprod/yanky.nvim", enabled = false },
+  },
+
+  {
     enabled = false,
     "folke/flash.nvim",
     ---@type Flash.Config

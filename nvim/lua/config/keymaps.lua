@@ -2,10 +2,6 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-local discipline = require("thd.discipline")
-
-discipline.cowboy()
-
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
@@ -50,11 +46,22 @@ keymap.set("n", "<C-w><right>", "<C-w>>")
 keymap.set("n", "<C-w><up>", "<C-w>+")
 keymap.set("n", "<C-w><down>", "<C-w>-")
 
+-- cursor stays at the same place after doing "J"
+keymap.set("n", "J", "mzJ`z")
+
 -- run python code
 keymap.set("n", "<C-k>", ":w<Return>:split<Return><C-w>w:term python3 %<Return>")
 
 -- copilot
 keymap.set("n", "cp", ":Copilot panel<Return>")
+
+-- local and global yank
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
+
+-- move lines
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Diagnostics
 keymap.set("n", "<C-j>", function()
