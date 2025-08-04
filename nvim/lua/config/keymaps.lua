@@ -69,5 +69,9 @@ keymap.set("n", "<C-j>", function()
 end, opts)
 
 keymap.set("n", "<leader>r", function()
-  require("thd.utils").replaceHexWithHSL()
+  require("thd.hsl").replaceHexWithHSL()
+end)
+
+keymap.set("n", "<leader>i", function()
+  require("thd.lsp").toggleInlayHints()
 end)

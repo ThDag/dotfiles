@@ -84,7 +84,9 @@ return {
         ";r",
         function()
           local builtin = require("telescope.builtin")
-          builtin.live_grep()
+          builtin.live_grex({
+            hidden = true,
+          })
         end,
         desc = "Search for a string in your current working directory and get results live as you type, respects .gitignore",
       },
