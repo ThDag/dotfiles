@@ -3,7 +3,8 @@ return {
   opts = {
     keymap = {
       preset = "enter",
-      ["<Tab>"] = { "select_and_accept" }, -- uses tab as auto complete
+      ["<Tab>"] = { "accept", "fallback" }, -- confirm if completion is visible, otherwise indent
+      ["<S-Tab>"] = { "select_prev", "fallback" },
       ["<Cr>"] = {}, -- disables return to auto complete
     },
   },
