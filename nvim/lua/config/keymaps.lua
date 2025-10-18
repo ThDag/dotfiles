@@ -12,10 +12,14 @@ keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
 
 -- Save file faster
-vim.keymap.set("n", "<leader>r", "<cmd>w<cr>", { desc = "Save file" })
+keymap.set("n", "<leader>r", "<cmd>w<cr>", { desc = "Save file" })
 
 -- Move selected lines down with J
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 
 -- Move selected lines up with K
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- window size adjustment
+keymap.set("n", "<C-w>,", "<C-w><")
+keymap.set("n", "<C-w>.", "<C-w>>")
