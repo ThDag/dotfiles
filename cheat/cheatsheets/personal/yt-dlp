@@ -1,0 +1,2 @@
+# download the given section from a video
+yt-dlp --download-sections "*00:01:11-00:02:22" --recode-video mp4 --force-keyframes-at-cuts [link]

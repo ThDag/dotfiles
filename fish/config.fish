@@ -19,6 +19,8 @@ zoxide init fish | source
 
 fish_vi_key_bindings
 
+set -x EDITOR /opt/homebrew/bin/nvim
+set -x VISUAL /opt/homebrew/bin/nvim
 set -x FZF_DEFAULT_OPTS "--layout=reverse"
 # fzf-fish layout
 
