@@ -14,12 +14,6 @@ return {
     opts.formatters_by_ft.css = { "stylelint", "prettier" }
     opts.formatters_by_ft.scss = { "stylelint", "prettier" }
 
-    -- Ensure format_on_save is enabled in opts
-    opts.format_on_save = {
-      timeout_ms = 500,
-      lsp_fallback = true,
-    }
-
     return opts
   end,
 }
