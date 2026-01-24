@@ -3,7 +3,7 @@ if status is-interactive
 end
 
 function fish_greeting
-    fortune | cowsay
+    fortune -n 300 -s | cowsay
 end
 
 if type -q eza
