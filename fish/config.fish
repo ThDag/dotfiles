@@ -25,8 +25,18 @@ fish_vi_key_bindings
 
 set -x EDITOR /opt/homebrew/bin/nvim
 set -x VISUAL /opt/homebrew/bin/nvim
-set -x FZF_DEFAULT_OPTS "--layout=reverse"
+set -x FZF_DEFAULT_OPTS "--preview 'bat --style=numbers --color=always --line-range :500 {}'"
 # fzf-fish layout
+
+# yazi
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    command yazi $argv --cwd-file="$tmp"
+    if read -z cwd <"$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
+        builtin cd -- "$cwd"
+    end
+    command rm -f -- "$tmp"
+end
 
 function tarage
     set item $argv[1]
