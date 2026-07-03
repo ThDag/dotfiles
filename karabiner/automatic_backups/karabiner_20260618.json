@@ -65,7 +65,6 @@
                     },
                     {
                         "description": "button3+button4 -> hotkey, button3+button5 -> hotkey",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [

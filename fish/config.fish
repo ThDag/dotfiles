@@ -7,8 +7,8 @@ function fish_greeting
 end
 
 if type -q eza
-    alias ll "eza -l -b --git -h --no-permissions --icons --group-directories-first"
-    alias lla "ll -a"
+    alias ll "eza -l -b --git -h --no-permissions --icons --group-directories-first --total-size"
+    alias lla "ll -a --total-size"
     alias llt "eza -l -b --git -h --no-permissions --icons --tree"
     alias llta "ll -a --tree"
 end
@@ -72,3 +72,9 @@ function ungage
 end
 
 eval (direnv hook fish)
+
+test -e {$HOME}/.iterm2_shell_integration.fish; and source {$HOME}/.iterm2_shell_integration.fish
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /Users/thd/.lmstudio/bin
+# End of LM Studio CLI section
