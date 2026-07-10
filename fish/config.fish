@@ -28,14 +28,19 @@ set -x VISUAL /opt/homebrew/bin/nvim
 set -x FZF_DEFAULT_OPTS "--preview 'bat --style=numbers --color=always --line-range :500 {}'"
 # fzf-fish layout
 
-# yazi
+# # yazi
+# # this makes yazi move to the directory that you quit yazi at.
+# function y
+#     set tmp (mktemp -t "yazi-cwd.XXXXXX")
+#     command yazi $argv --cwd-file="$tmp"
+#     if read -z cwd <"$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
+#         builtin cd -- "$cwd"
+#     end
+#     command rm -f -- "$tmp"
+# end
+
 function y
-    set tmp (mktemp -t "yazi-cwd.XXXXXX")
-    command yazi $argv --cwd-file="$tmp"
-    if read -z cwd <"$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
-        builtin cd -- "$cwd"
-    end
-    command rm -f -- "$tmp"
+    yaz:
 end
 
 function tarage
