@@ -7,8 +7,8 @@ function fish_greeting
 end
 
 if type -q eza
-    alias ll "eza -l -b --git -h --no-permissions --icons --group-directories-first --total-size"
-    alias lla "ll -a --total-size"
+    alias ll "eza -l -b --git -h --no-permissions --icons --group-directories-first "
+    alias lla "ll -a "
     alias llt "eza -l -b --git -h --no-permissions --icons --tree"
     alias llta "ll -a --tree"
 end
@@ -28,20 +28,21 @@ set -x VISUAL /opt/homebrew/bin/nvim
 set -x FZF_DEFAULT_OPTS "--preview 'bat --style=numbers --color=always --line-range :500 {}'"
 # fzf-fish layout
 
-# # yazi
-# # this makes yazi move to the directory that you quit yazi at.
-# function y
-#     set tmp (mktemp -t "yazi-cwd.XXXXXX")
-#     command yazi $argv --cwd-file="$tmp"
-#     if read -z cwd <"$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
-#         builtin cd -- "$cwd"
-#     end
-#     command rm -f -- "$tmp"
-# end
-
+# yazi
+# this makes yazi move to the directory that you quit yazi at.
 function y
-    yaz:
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    command yazi $argv --cwd-file="$tmp"
+    if read -z cwd <"$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
+        builtin cd -- "$cwd"
+    end
+    command rm -f -- "$tmp"
 end
+
+# yazi as y without the auto directory jumping
+# function y
+#     yazi
+# end
 
 function tarage
     set item $argv[1]
@@ -80,6 +81,6 @@ eval (direnv hook fish)
 
 test -e {$HOME}/.iterm2_shell_integration.fish; and source {$HOME}/.iterm2_shell_integration.fish
 
-# Added by LM Studio CLI (lms)
-set -gx PATH $PATH /Users/thd/.lmstudio/bin
-# End of LM Studio CLI section
+set -gx ATUIN_STYLE compact
+set -gx ATUIN_INLINE_HEIGHT 40
+atuin init fish --disable-up-arrow | source

@@ -1,0 +1,9 @@
+[[manager.prepend_keymap]]
+on   = [ "q" ]
+run  = "quit"
+desc = "Quit Yazi AND cd to current directory"
+
+[[manager.prepend_keymap]]
+on   = [ "Q" ]
+run  = "quit --no-cwd-file"
+desc = "Quit Yazi WITHOUT changing shell directory"
