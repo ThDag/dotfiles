@@ -1,0 +1,9 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ruler",
+  "description": "Measure Distance Between Two Points",
+  "author": {
+    "name": "anwarulislam"
+  },
+  "license": "MIT"
+}

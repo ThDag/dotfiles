@@ -23,3 +23,10 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- window size adjustment
 keymap.set("n", "<C-w>,", "<C-w><")
 keymap.set("n", "<C-w>.", "<C-w>>")
+
+-- run c files quickly
+vim.api.nvim_create_user_command("Runc", function()
+  vim.cmd("write")
+  vim.cmd("split | terminal gcc % -o /tmp/a.out && /tmp/a.out")
+  vim.cmd("startinsert")
+end, { desc = "Compile and run C file" })

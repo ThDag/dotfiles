@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "large-type",
+  "description": "Large Type allows you to show text in large characters across your screen",
+  "author": {
+    "name": "gbarba"
+  },
+  "license": "MIT",
+  "version": "0.0.2"
+}

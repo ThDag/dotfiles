@@ -84,3 +84,4 @@ test -e {$HOME}/.iterm2_shell_integration.fish; and source {$HOME}/.iterm2_shell
 set -gx ATUIN_STYLE compact
 set -gx ATUIN_INLINE_HEIGHT 40
 atuin init fish --disable-up-arrow | source
+export PATH="$HOME/.local/bin:$PATH"
