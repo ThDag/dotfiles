@@ -1,9 +1,0 @@
-{
-  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
-  "name": "say",
-  "description": "Use the built-in text-to-speech engine to say the text you provide.",
-  "author": {
-    "name": "litomore"
-  },
-  "license": "MIT"
-}
